@@ -1,0 +1,22 @@
+.form_wrapper{
+    width:520px;
+    margin:0px auto;
+ 
+
+}
+.text-center{
+    color:#605b5b;
+    font-size: 33px;
+}
+a{
+    color: white;
+}
+a:hover{
+    text-decoration: none;
+    color: white;
+}
+label{
+    font-size: 17px;
+    font-weight: 500;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}

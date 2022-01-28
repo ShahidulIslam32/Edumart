@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/a796779be2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+</head>
+<body>  
+
+{% if registered %}
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 mt-5">
+                    <div class="alert alert-success">Congratulations !! Your Account Has Been Creatred Successfully !</div>
+                    <a href="{% url 'login_test_app:login' %}"><button class="form-control btn btn-primary">Now You Can Login</button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% else %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form action="" method="POST" enctype="multipart/form-data" style="width:540px;margin:12px auto; background:#605b5b; padding:21px;border-radius:5px;opacity:.9">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3 class="text-center">New Guest ? Create Your Account</h3>
+                                {% csrf_token %}
+                                {{ user_form.as_p }}
+                                {{ user_info_form.as_p }}
+                                <input type="submit" value="Register" class="from-control btn btn-primary btn-block">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+</body>
+</html>
