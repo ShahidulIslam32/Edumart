@@ -2,7 +2,7 @@ from django.conf.urls import url
 from django.urls import path
 from login_test_app import views
 from django.conf import settings
-from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns 
+from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
 
 app_name = 'login_test_app'
 
@@ -18,7 +18,8 @@ urlpatterns = [
     path('dashboard/', views.dashboard, name='dashboard'),
     path('warn/', views.warn, name='warn'),
     path('profile/', views.profile, name='profile'),
-  
+    
+
 ]
 
 urlpatterns += staticfiles_urlpatterns()

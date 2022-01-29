@@ -2,6 +2,7 @@ from django.contrib.auth.signals import user_logged_in
 from django.shortcuts import render
 from login_test_app.forms import UserForm, UserInfoForm
 from django.core.mail import send_mail
+from django.shortcuts import get_object_or_404
 #from django.conf import settings
 
 
